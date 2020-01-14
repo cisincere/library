@@ -1,3 +1,5 @@
+const authorization =  'Basic dGVzdF9jbGllbnQ6dGVzdF9zZWNyZXQ=';
+
 const formatTime = date => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
