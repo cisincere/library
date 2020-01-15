@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/recommend/recommend",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/user/user"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -27,7 +28,7 @@
         "selectedIconPath": "images/recommend2.png"
       },
       {
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/user/user",
         "text": "主页",
         "iconPath": "images/user1.png",
         "selectedIconPath": "images/user2.png"
