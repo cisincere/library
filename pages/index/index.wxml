@@ -1,13 +1,56 @@
 <!--index.wxml-->
 <view>
- <view class="page-section">
-      <swiper indicator-dots="{{indicatorDots}}"
-        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-        <block wx:for="{{background}}" wx:key="*this">
-          <swiper-item>
-            <image class="swiper-item" mode="aspectFit" src=" {{item}}"></image> 
-          </swiper-item>
-        </block>
-      </swiper>
+  <view class="page-section">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" circular="{{true}}" duration="{{duration}}">
+      <block wx:for="{{background}}" wx:key="*this">
+        <swiper-item>
+          <image class="swiper-item" mode="aspectFit" src=" {{item}}"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!-- <view class="search-info">
+    <view >
+      <input  />
+      <image  />
     </view>
+  </view> -->
+  <view class="index-recommend-book">
+    <scroll-view scroll-x="true" scroll-with-animation="{{true}}" bindscroll="scroll" scroll-left="{{scrollLeft}}" style="white-space: nowrap; display: flex">
+      <!--  display: inline-block-->
+      <block wx:for="{{books}}" wx:key="*this">
+        <view class="book-content">
+          <view class="book">
+            <image class="book-image" mode="aspectFit" src="{{item.img_src}}" />
+          </view>
+          <text class="book-title">{{item.text}}</text>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+  <view class="index-selection-seat">
+    <block wx:for="{{info_desk_chair}}" wx:key="*this">
+      <view class="info_desk_chair">
+        <view class="top_chair">
+          <image class="chair_idc" bindtap="selection_chair" data-s="{{item.is_selection[0]}}" src="{{chair[item.is_selection[0].flg]}}" />
+          <image class="chair_idc" bindtap="selection_chair" data-s="{{item.is_selection[1]}}" src="{{chair[item.is_selection[1].flg]}}" />
+        </view>
+        <view class="desk">
+          <image class="desk_idc" src="../../images/desk/desk.png" />
+        </view>
+        <view class="bottem_chair" hover-class="none" hover-stop-propagation="false">
+          <image class="chair_idc" bindtap="selection_chair" data-s="{{item.is_selection[2]}}" src="{{chair[item.is_selection[2].flg]}}" />
+          <image class="chair_idc" bindtap="selection_chair" data-s="{{item.is_selection[3]}}" src="{{chair[item.is_selection[3].flg]}}" />
+        </view>
+      </view>
+    </block>
+    <popup id='popup' 
+      title='小组件' 
+      content='学会了吗' 
+      btn_no='没有' 
+      btn_ok='学会了'
+      bind:error="_error"  
+      bind:success="_success">
+    </popup>
+  </view>
 </view>

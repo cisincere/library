@@ -5,15 +5,109 @@ const app = getApp()
 Page({
   data: {
     background: ['./img/1-reg.png', './img/2-reg.png', './img/3-reg.jpg'],
+    books: [{
+      text: 'Deep Learning',
+      img_src: '../../images/deep_learning.jpg'
+    }, {
+      text: 'Deep Learning',
+      img_src: '../../images/deep_learning.jpg'
+    }, {
+      text: 'Deep Learning',
+      img_src: '../../images/deep_learning.jpg'
+    }, {
+      text: 'Deep Learning',
+      img_src: '../../images/deep_learning.jpg'
+    }, {
+      text: 'Deep Learning',
+      img_src: '../../images/deep_learning.jpg'
+    }, {
+      text: 'Deep Learning',
+      img_src: '../../images/deep_learning.jpg'
+    }, {
+      text: 'Deep Learning',
+      img_src: '../../images/deep_learning.jpg'
+    }, {
+      text: 'Deep Learning',
+      img_src: '../../images/deep_learning.jpg'
+    }],
+    info_desk_chair: [{
+      'is_selection': [{"flg":1, "id": 101}, {"flg":0, "id": 102}, {"flg":0, "id": 103}, {"flg":1, "id": 104}]
+    }, {
+      'is_selection': [{"flg":0, "id": 201}, {"flg":0, "id": 202}, {"flg":1, "id": 203}, {"flg":0, "id": 204}]
+    }, {
+      'is_selection': [{"flg":1, "id": 301}, {"flg":0, "id": 302}, {"flg":0, "id": 303}, {"flg":1, "id": 304}]
+    }, {
+      'is_selection': [{"flg":1, "id": 401}, {"flg":1, "id": 402}, {"flg":0, "id": 403}, {"flg":1, "id": 404}]
+    }, {
+      'is_selection': [{"flg":1, "id": 501}, {"flg":0, "id": 502}, {"flg":1, "id": 503}, {"flg":0, "id": 504}]
+    }],
+    chair: ['../../images/desk/Chair.png', '../../images/desk/Chair_c.png'],
     indicatorDots: true,
     vertical: false,
-    autoplay: false,
+    autoplay: true,
     interval: 2000,
-    duration: 500
+    duration: 500,
+    scrollLeft: 0
     // motto: 'Hello World',
     // userInfo: {},
     // hasUserInfo: false,
     // canIUse: wx.canIUse('button.open-type.getUserInfo')
+  },
+  onReady: function () {
+    //获得popup组件
+    this.popup = this.selectComponent("#popup");
+  },
+  showPopup(data) {
+    this.popup.showPopup();
+  },
+   //取消事件
+   _error() {
+     this.popup.setData({
+       "chair_id": 0
+     })
+    this.popup.hidePopup();
+  },
+  //确认事件
+  _success() {
+    if(this.popup.data.chair_id != 0){
+      console.log(this.popup.data.chair_id);
+      this.popup.setData({
+        "chair_id": 0
+      })
+    }
+    this.popup.hidePopup();
+  },
+  scrolltolower: function() {
+    this.setData({
+      scrollLeft: 0
+    });
+  },
+  selection_chair:function(event){
+    const s_data  = event.currentTarget.dataset.s;
+    let title = "已选"+s_data.id;
+    if(s_data.flg !== 0){
+        this.popup.setData({
+            "title": title,
+            "content": "该座位已被选取",
+            "btn_no" : "取消",
+            "btn_ok" : "确定"
+        });
+    }else{
+      this.popup.setData({
+        "title": title,
+        "content": "是否选择该座位?",
+        "btn_no": '取消',
+        "btn_ok": '确定',
+        "chair_id": s_data.id
+      })
+    }
+    this.showPopup();
+  },
+  scroll(e) {
+    console.log(e['detail']['scrollLeft']);
+    if (e['detail']['scrollLeft'] > 658) {
+      this.scrolltolower();
+    }
   },
   // //事件处理函数
   // bindViewTap: function() {
