@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/recommend/recommend",
     "pages/logs/logs",
-    "pages/user/user"
+    "pages/user/user",
+    "component/popup/popup"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -17,7 +18,7 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "推荐",
+        "text": "首页",
         "iconPath": "images/index1.png",
         "selectedIconPath": "images/index2.png"
       },
