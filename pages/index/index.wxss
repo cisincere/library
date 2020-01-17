@@ -17,11 +17,39 @@ swiper-item {
   height: 100%;
   background-color: #fff5ee;
 }
-
+.info{
+  text-align: center;
+}
+.search-info{
+  width: 94%;
+  height: 50px;
+  margin: 0 auto;
+  margin-top: 15px;
+  position: relative;
+}
+.search-image{
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 11px;
+  left: 47%;
+}
+.search-input{
+  width: 96%;
+height: 39px;
+background-color:#FAFAFA;
+margin: 0 auto;
+border-radius: 30px;
+border: 1px solid blanchedalmond;
+position: relative;
+top: 6px;
+text-align: left;
+padding-left: 16px;
+}
 .index-recommend-book {
   width: 94%;
   margin: 0 auto;
-  margin-top: 30px;
+  margin-top: 20px;
   text-align: center;
   overflow: auto;
 }
@@ -45,7 +73,6 @@ swiper-item {
   font-size: 11px;
   color: black;
 }
-
 .index-selection-seat {
   width: 94%;
   margin: 0 auto;

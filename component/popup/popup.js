@@ -38,6 +38,8 @@ Component({
    */
   data: {
     flag: true,
+    time: 30,
+    si: ''
   },
  
   /**
@@ -52,8 +54,24 @@ Component({
     },
     //展示弹框
     showPopup () {
+      const that = this;
       this.setData({
         flag: !this.data.flag
+      });
+      let si = setInterval(()=>{
+        that.setData({
+          time: --this.data.time
+        });
+        if(that.data.time <= 0){
+          clearInterval(si);
+          this.setData({
+            flag: !this.data.flag,
+          });
+          that.flush_data();
+        }
+      },1000);
+      this.setData({
+        si: si
       })
     },
     /*
@@ -62,11 +80,20 @@ Component({
     */
     _error () {
       //触发取消回调
+      clearInterval(this.data.si);
+      this.flush_data();
       this.triggerEvent("error")
     },
     _success () {
       //触发成功回调
+      clearInterval(this.data.si);
+      this.flush_data();
       this.triggerEvent("success");
+    },
+    flush_data(){
+      this.setData({
+        time: 30
+      });
     }
   }
 })

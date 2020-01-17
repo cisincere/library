@@ -9,12 +9,13 @@
       </block>
     </swiper>
   </view>
-  <!-- <view class="search-info">
-    <view >
-      <input  />
-      <image  />
-    </view>
-  </view> -->
+  <view class="info">
+  <view class="search-info">
+      <input type="text" placeholder-style="color:#838B8B" bindinput="bindKeyInput" placeholder="搜索" maxlength="15"  bindconfirm="search"  class="search-input"  />
+      <block wx:if="{{flg}}">
+      <image class="search-image" src="../../images/search/search.png" />
+      </block>
+  </view>
   <view class="index-recommend-book">
     <scroll-view scroll-x="true" scroll-with-animation="{{true}}" bindscroll="scroll" scroll-left="{{scrollLeft}}" style="white-space: nowrap; display: flex">
       <!--  display: inline-block-->
@@ -52,5 +53,6 @@
       bind:error="_error"  
       bind:success="_success">
     </popup>
+  </view>
   </view>
 </view>
