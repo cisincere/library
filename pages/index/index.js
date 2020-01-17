@@ -2,6 +2,8 @@
 //获取应用实例
 const app = getApp()
 
+const api = require('../../utils/api.js')
+
 Page({
   data: {
     background: ['./img/1-reg.png', './img/2-reg.png', './img/3-reg.jpg'],
@@ -57,7 +59,7 @@ Page({
     //获得popup组件
     this.popup = this.selectComponent("#popup");
   },
-  showPopup(data) {
+  showPopup() {
     this.popup.showPopup();
   },
    //取消事件
@@ -68,9 +70,11 @@ Page({
     this.popup.hidePopup();
   },
   //确认事件
-  _success() {
-    if(this.popup.data.chair_id != 0){
-      console.log(this.popup.data.chair_id);
+  _success() {  
+    const id = this.popup.data.chair_id;
+    if(id != 0){
+      console.log(id);
+      const result =  api.chariApi.chair(id);
       this.popup.setData({
         "chair_id": 0
       })
@@ -89,15 +93,11 @@ Page({
         this.popup.setData({
             "title": title,
             "content": "该座位已被选取",
-            "btn_no" : "取消",
-            "btn_ok" : "确定"
         });
     }else{
       this.popup.setData({
         "title": title,
         "content": "是否选择该座位?",
-        "btn_no": '取消',
-        "btn_ok": '确定',
         "chair_id": s_data.id
       })
     }
@@ -105,7 +105,7 @@ Page({
   },
   scroll(e) {
     console.log(e['detail']['scrollLeft']);
-    if (e['detail']['scrollLeft'] > 658) {
+    if (e['detail']['scrollLeft'] > 680) {
       this.scrolltolower();
     }
   },

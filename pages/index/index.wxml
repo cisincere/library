@@ -45,10 +45,10 @@
       </view>
     </block>
     <popup id='popup' 
-      title='小组件' 
-      content='学会了吗' 
-      btn_no='没有' 
-      btn_ok='学会了'
+      title='' 
+      content='' 
+      btn_no='取消' 
+      btn_ok='确定'
       bind:error="_error"  
       bind:success="_success">
     </popup>
