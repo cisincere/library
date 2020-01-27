@@ -1,13 +1,13 @@
 {
   "pages": [
+    "pages/user/user",
     "pages/recommend/recommend",
     "pages/index/index", 
     "pages/logs/logs",
-    "pages/user/user",
     "component/popup/popup"
   ],
   "window": {
-    "backgroundTextStyle": "light",
+    "backgroundTextStyle": "light", 
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"

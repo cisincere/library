@@ -1,2 +1,27 @@
-<!--pages/user.wxml-->
-<text>pages/user.wxml</text>
+<view class="user">
+    <view class="user-head">
+        <view >
+            <view class="head-sculpture">
+                <image class="hs-image" />
+            </view>
+            <view class="user-info">
+                <view class="nick-name"></view>
+                <view class="user-account"></view>
+            </view>
+        </view>
+    </view>
+    <view class="user-body">
+        <block wx:for="{{}}" wx:key="*this">
+            <view class="option-info">
+                <image class="icon" />
+                <text class="icon-text"></text>
+            </view>
+        </block>
+    </view>
+    <view class="user-foot">
+        <view class="option-info">
+            <image class="icon" />
+            <text class="icon-text"></text>
+        </view>
+    </view>
+</view>
