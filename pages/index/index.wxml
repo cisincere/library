@@ -4,7 +4,7 @@
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" circular="{{true}}" duration="{{duration}}">
       <block wx:for="{{background}}" wx:key="*this">
         <swiper-item>
-          <image class="swiper-item" mode="aspectFit" src=" {{item}}"></image>
+          <image class="swiper-item" mode="aspectFit" src="{{item}}"></image>
         </swiper-item>
       </block>
     </swiper>
@@ -18,7 +18,6 @@
   </view>
   <view class="index-recommend-book">
     <scroll-view scroll-x="true" scroll-with-animation="{{true}}" bindscroll="scroll" scroll-left="{{scrollLeft}}" style="white-space: nowrap; display: flex">
-      <!--  display: inline-block-->
       <block wx:for="{{books}}" wx:key="*this">
         <view class="book-content">
           <view class="book">
