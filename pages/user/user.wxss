@@ -1,1 +1,56 @@
 /* pages/user.wxss */
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+.user-box{
+  border-bottom:20px solid rgba(176, 183, 189, 0.404);
+}
+
+.user-head {
+  overflow: hidden;
+  background-color: white;
+  padding-bottom: 35px;
+}
+
+.head-sculpture {
+  width: 60px !important;
+  height: 60px !important;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+.hs-image {
+  width: 60px !important;
+  height: 60px !important;
+  border-radius: 13px;
+}
+
+.user-info {
+  position: absolute;
+  top: 33px;
+  left: 105px;
+}
+
+.nick-name {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: cursive, Helvetica, sans-serif;
+  margin-bottom: 13px;
+}
+
+.user-account > text {
+  font-size: 14px;
+  color: #8b8a8a;
+  font-family: cursive, Helvetica, sans-serif;
+}
+.info{
+  position: absolute;
+  top: 36px;
+  right: -140px;
+}
+.user-account > .info > image{
+  width: 20px;
+  height: 20px;
+}

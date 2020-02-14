@@ -1,27 +1,43 @@
 <view class="user">
-    <view class="user-head">
-        <view >
-            <view class="head-sculpture">
-                <image class="hs-image" />
-            </view>
-            <view class="user-info">
-                <view class="nick-name"></view>
-                <view class="user-account"></view>
-            </view>
+  <view class="user-head user-box">
+    <view>
+      <!-- 头像 -->
+      <view class="head-sculpture">
+        <!-- 头像图片 -->
+        <image class="hs-image" src="{{hs_image}}"></image>
+      </view>
+      <!-- 用户信息 -->
+      <view class="user-info">
+        <!-- 昵称 -->
+        <view class="nick-name">{{nick_name}}</view>
+        <!-- 用户账号 -->
+        <view class="user-account">
+          <text>微信号: </text>
+          <text class="account"> {{user_account}}</text>
+          <view class="info">
+              <image src="../../images/info/ewm.png" />
+              <image src="../../images/info/right.png" />
+          </view>
         </view>
+      </view>
     </view>
-    <view class="user-body">
-        <block wx:for="{{}}" wx:key="*this">
-            <view class="option-info">
-                <image class="icon" />
-                <text class="icon-text"></text>
-            </view>
-        </block>
+  </view>
+  <!-- 主体部分 -->
+  <view class="user-body user-box">
+    <block wx:for="{{}}" wx:key="*this">
+      <view class="option-info">
+        <!-- 标签图片 -->
+        <image class="icon" />
+        <!-- 标签 -->
+        <text class="icon-text"></text>
+      </view>
+    </block>
+  </view>
+  <!-- 底部 -->
+  <view class="user-foot">
+    <view class="option-info">
+      <image class="icon" />
+      <text class="icon-text"></text>
     </view>
-    <view class="user-foot">
-        <view class="option-info">
-            <image class="icon" />
-            <text class="icon-text"></text>
-        </view>
-    </view>
+  </view>
 </view>

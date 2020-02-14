@@ -5,7 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    hs_image: '../../images/test/4-reg.png',
+    nick_name: '落雪',
+    user_account: 'l34923591466'
   },
 
   /**
